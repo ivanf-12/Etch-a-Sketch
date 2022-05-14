@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.grid-row {
+  display: flex;
+  gap: 0.5em;
+}
+
+.grids {
+  width: 1em;
+  height: 1em;
+  background-color: red;
+  width: 25%;
+}
