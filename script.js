@@ -81,6 +81,9 @@ function setupGrid(currentSize) {
   for(let i=0; i<currentSize*currentSize; ++i) {
     const gridElement = document.createElement('div');
     gridElement.classList.add("grid-element");
+    gridElement.addEventListener('touchstart', mouseDown);
+    gridElement.addEventListener('touchend', mouseUp);
+    gridElement.addEventListener('touchmove', hold);
     gridElement.addEventListener('mouseover', hold);
     gridElement.addEventListener('mousedown', mouseDown);
     gridElement.addEventListener('mouseup', mouseUp);
