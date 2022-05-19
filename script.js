@@ -112,8 +112,10 @@ function resizeGrid() {
 }
 
 function clearGrid() {
-  grid.innerHTML = '';
-  setupGrid(currentSize);
+  const grids = document.querySelectorAll('.grid-element');
+  grids.forEach((grid) => {
+    grid.style.backgroundColor = 'white';
+  });
 }
 
 setupGrid(currentSize);
