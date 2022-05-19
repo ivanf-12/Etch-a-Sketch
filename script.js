@@ -75,15 +75,28 @@ function hold(e) {
   }
 }
 
+function clicks(e) {
+  if(currentMode===1) {
+    e.target.style.backgroundColor = currentColor;
+  }
+  else if(currentMode===2) {
+    const R = Math.floor(Math.random()*255);
+    const G = Math.floor(Math.random()*255);
+    const B = Math.floor(Math.random()*255);
+    e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+  }
+  else{
+    e.target.style.backgroundColor = 'white';
+  }
+}
+
 function setupGrid(currentSize) {
   grid.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
   grid.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
   for(let i=0; i<currentSize*currentSize; ++i) {
     const gridElement = document.createElement('div');
     gridElement.classList.add("grid-element");
-    gridElement.addEventListener('touchstart', mouseDown);
-    gridElement.addEventListener('touchend', mouseUp);
-    gridElement.addEventListener('touchmove', hold);
+    gridElement.addEventListener('click', clicks);
     gridElement.addEventListener('mouseover', hold);
     gridElement.addEventListener('mousedown', mouseDown);
     gridElement.addEventListener('mouseup', mouseUp);
