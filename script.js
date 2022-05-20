@@ -1,4 +1,4 @@
-const DEFAULT_SIZE = 16;
+const DEFAULT_SIZE = 37;
 const DEFAULT_COLOR = 'rgb(0, 0, 0)';
 
 let currentColor = DEFAULT_COLOR;
@@ -17,6 +17,7 @@ const eraserButton = document.getElementById("eraser-button");
 const clearButton = document.getElementById("clear-button");
 const colorModeButton = document.getElementById("color-mode-button");
 
+rangeButton.value = DEFAULT_COLOR
 rangeButton.onchange = (e)=>{resizeGrid(e.target.value)}
 colorButtonContainer.onclick = ()=>{colorButton.click()};
 colorButton.onchange = (e)=>{setColor(e.target.value)};
