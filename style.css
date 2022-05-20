@@ -31,6 +31,7 @@ footer {
 
 i {
   color: white;
+  margin-left: 0.5rem;
 }
 
 #container {
@@ -64,7 +65,7 @@ h1 {
   width: 10rem;
   height: 2.5rem;
   border: 0;
-  border-radius: 10px;
+  border-radius: 20px;
   font-family: 'Koulen', cursive;
 }
 
@@ -85,6 +86,20 @@ h1 {
   animation-duration: 0.07s;
   box-shadow: 0px 0px 10px black;
 } 
+
+#rangeButton {
+  padding: 0;
+}
+
+#rangeButton:hover {
+  box-shadow: none;
+}
+
+output {
+  margin-top: -1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
 
 .active-button {
   color: white;

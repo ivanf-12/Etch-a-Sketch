@@ -8,8 +8,8 @@ let currentRainbow = false;
 let currentMouse = false;
 let currentEraser = false;
 
+const rangeButton = document.getElementById("rangeButton")
 const grid = document.getElementById("grid");
-const sizeButton = document.getElementById("size-button");
 const colorButtonContainer = document.getElementById("color-button-container");
 const colorButton = document.getElementById("color-button");
 const rainbowButton = document.getElementById("rainbow-button");
@@ -17,7 +17,7 @@ const eraserButton = document.getElementById("eraser-button");
 const clearButton = document.getElementById("clear-button");
 const colorModeButton = document.getElementById("color-mode-button");
 
-sizeButton.onclick = ()=>{resizeGrid()};
+rangeButton.onchange = (e)=>{resizeGrid(e.target.value)}
 colorButtonContainer.onclick = ()=>{colorButton.click()};
 colorButton.onchange = (e)=>{setColor(e.target.value)};
 clearButton.onclick = ()=>{clearGrid()};
@@ -105,9 +105,9 @@ function setupGrid(currentSize) {
   }
 }
 
-function resizeGrid() {
+function resizeGrid(value) {
   grid.innerHTML = '';
-  currentSize = prompt("", 16);
+  currentSize = value;
   setupGrid(currentSize);
 }
 
